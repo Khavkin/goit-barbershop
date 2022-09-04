@@ -1,0 +1,237 @@
+:root {
+  --main-text-color: #555555;
+  --accent-text-color: #ff6c00;
+  --main-backbround-color: #ffffff;
+  --secondary-background-color: #f7f7f7;
+  --main-title-color: #303030;
+  --secondary-title-color: #ffffff;
+  --hero-text-color: #9da4bd;
+  --temp-background-color: #191c26;
+  --secondary-pretitle-color: rgba(157, 164, 189, 0.6);
+  --booking-section-color: #191c26;
+}
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.66;
+  letter-spacing: 0.02em;
+  color: var(--main-text-color);
+  background-color: var(--main-backbround-color);
+}
+
+.title {
+  font-family: 'Raleway', sans-serif;
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 1.16;
+  letter-spacing: 0.05em;
+  color: var(--main-title-color);
+}
+
+.link {
+  text-decoration: none;
+  font-style: normal;
+}
+
+.link:hover,
+.link:focus {
+  color: var(--accent-text-color);
+}
+
+.list {
+  list-style: none;
+}
+
+.pre-title {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 1.36;
+  text-transform: uppercase;
+}
+
+.booking-btn {
+  text-transform: uppercase;
+  background-color: var(--main-backbround-color);
+  cursor: pointer;
+}
+
+.booking-btn:hover,
+.booking-btn:focus {
+  background-color: var(--accent-text-color);
+}
+
+/* nav */
+.nav {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.36;
+  letter-spacing: 0.1em;
+  color: var(--secondary-title-color);
+  background-color: var(--temp-background-color);
+}
+
+.nav-link {
+  color: inherit;
+}
+
+.nav-list .current {
+  color: var(--accent-text-color);
+}
+
+.nav .booking-btn {
+  background-color: inherit;
+  color: var(--main-backbround-color);
+}
+
+.nav .booking-btn:hover,
+.nav .booking-btn:focus {
+  background-color: var(--accent-text-color);
+}
+
+/* hero section */
+.hero {
+  color: var(--hero-text-color);
+  background-color: var(--temp-background-color);
+}
+
+.hero-contacts {
+  background-color: var(--main-backbround-color);
+}
+
+.hero-contacts-link {
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 1.36;
+  letter-spacing: 0.2em;
+  color: var(--main-title-color);
+}
+
+.hero .pre-title {
+  color: var(--secondary-pretitle-color);
+}
+
+.hero .title {
+  color: var(--secondary-title-color);
+  font-weight: 700;
+  font-size: 72px;
+  line-height: 1.18;
+  letter-spacing: 0.05em;
+}
+
+/* about section */
+.about-text {
+  font-size: 14px;
+  line-height: 1.86;
+}
+
+/* prices section */
+.prices {
+  color: var(--hero-text-color);
+  background-color: var(--temp-background-color);
+}
+
+.prices .pre-title {
+  color: var(--secondary-pretitle-color);
+}
+
+.prices .title {
+  color: var(--secondary-title-color);
+}
+
+.prices .booking-btn {
+  color: var(--secondary-title-color);
+  background-color: inherit;
+}
+
+.prices .booking-btn:hover,
+.prices .booking-btn:focus {
+  background-color: var(--accent-text-color);
+}
+
+/* why-us section */
+.stat {
+  font-weight: 700;
+  font-size: 42px;
+  line-height: 1.36;
+  letter-spacing: 0.05em;
+  color: var(--main-title-color);
+}
+
+.plus {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--accent-text-color);
+}
+
+.stat-desc {
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 1.36;
+}
+
+.why-us .list-item {
+  background-color: var(--secondary-background-color);
+}
+
+/* Barbers section */
+.barber-title {
+  line-height: 1.38;
+  color: var(--main-title-color);
+}
+.barber-style {
+  font-size: 14px;
+  line-height: 1.35;
+  color: var(--accent-text-color);
+}
+
+/* Online booking section */
+.online-booking {
+  background-color: var(--booking-section-color);
+}
+
+.online-booking .title {
+  color: var(--secondary-title-color);
+}
+
+/* Contacts section  */
+.contacts {
+  background-color: var(--temp-background-color);
+  color: var(--hero-text-color);
+}
+.contacts .title {
+  color: var(--secondary-title-color);
+}
+
+.contacts .pre-title {
+  color: var(--secondary-title-color);
+}
+
+.contacts .link {
+  color: inherit;
+}
+
+.contacts .link:hover,
+.contacts .link:focus {
+  color: var(--accent-text-color);
+}
+
+.contacts .location {
+  font-weight: 700;
+}
+
+/* footer */
+footer {
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 1.36;
+  letter-spacing: 0.2em;
+  color: var(--hero-text-color);
+}
+
+footer .link {
+  font: inherit;
+  color: var(--main-title-color);
+}
