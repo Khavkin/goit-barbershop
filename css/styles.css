@@ -20,13 +20,56 @@ body {
   background-color: var(--main-backbround-color);
 }
 
+/* * {
+  outline: 1px solid red;
+} */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul {
+  margin: 0;
+}
+
+ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+.container {
+  width: 1200px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.section {
+  min-width: 1200px;
+  padding: 120px 0;
+}
+
 .title {
+  margin-bottom: 20px;
+
   font-family: 'Raleway', sans-serif;
   font-size: 42px;
   font-weight: 700;
   line-height: 1.16;
   letter-spacing: 0.05em;
   color: var(--main-title-color);
+}
+.line {
+  height: 1px;
+  width: 60px;
+  background-color: var(--main-title-color);
 }
 
 .link {
@@ -44,6 +87,8 @@ body {
 }
 
 .pre-title {
+  margin-bottom: 20px;
+
   font-family: 'Open Sans';
   font-style: normal;
   font-weight: 600;
@@ -56,6 +101,11 @@ body {
   text-transform: uppercase;
   background-color: var(--main-backbround-color);
   cursor: pointer;
+
+  padding: 12px 20px;
+
+  border: 1px solid var(--accent-text-color);
+  border-radius: 25px;
 }
 
 .booking-btn:hover,
@@ -63,25 +113,60 @@ body {
   background-color: var(--accent-text-color);
 }
 
+/* header */
+header.section {
+  padding-top: 20px;
+  padding-bottom: 0;
+}
+
+.header-wrap {
+  display: flex;
+}
+
+/* Logo */
+.logo {
+  padding-top: 32px;
+  padding-right: 32px;
+}
+
 /* nav */
 .nav {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+
+  padding-left: 100px;
+  padding-right: 20px;
+
   font-size: 12px;
   font-weight: 600;
   line-height: 1.36;
   letter-spacing: 0.1em;
+
   color: var(--secondary-title-color);
   background-color: var(--temp-background-color);
 }
 
-.nav-link {
-  color: inherit;
+.nav-list {
+  display: flex;
+  gap: 30px;
 }
 
 .nav-list .current {
   color: var(--accent-text-color);
 }
 
+.nav-link {
+  color: inherit;
+}
+
+.contacts-wrap {
+  margin-left: auto;
+}
+
 .nav .booking-btn {
+  margin-left: 40px;
+
   background-color: inherit;
   color: var(--main-backbround-color);
 }
@@ -94,10 +179,36 @@ body {
 /* hero section */
 .hero {
   color: var(--hero-text-color);
+}
+
+.hero.section {
+  padding: 0;
+}
+
+.hero .container {
+  display: flex;
+}
+
+.hero-wrap {
+  flex-grow: 1;
+
+  padding-left: 100px;
+  padding-top: 272px;
+  padding-bottom: 208px;
+
   background-color: var(--temp-background-color);
 }
 
 .hero-contacts {
+  display: flex;
+  gap: 40px;
+
+  padding-left: 51px;
+  padding-right: 20px;
+  padding-top: 140px;
+  transform: rotate(180deg);
+  writing-mode: vertical-lr;
+
   background-color: var(--main-backbround-color);
 }
 
@@ -110,10 +221,14 @@ body {
 }
 
 .hero .pre-title {
+  margin-bottom: 20px;
+
   color: var(--secondary-pretitle-color);
 }
 
 .hero .title {
+  margin-bottom: 20px;
+
   color: var(--secondary-title-color);
   font-weight: 700;
   font-size: 72px;
@@ -122,7 +237,27 @@ body {
 }
 
 /* about section */
-.about-text {
+.about .container {
+  display: flex;
+  gap: 30px;
+}
+
+.about .photo-list {
+  display: flex;
+  gap: 30px;
+  flex-shrink: 0;
+}
+
+/* .photo-list > li {
+  flex-shrink: 0;
+} */
+
+.about .pre-text {
+  margin-bottom: 20px;
+}
+.about .about-text {
+  margin-bottom: 42px;
+
   font-size: 14px;
   line-height: 1.86;
 }
@@ -138,10 +273,34 @@ body {
 }
 
 .prices .title {
+  margin-bottom: 44px;
+
   color: var(--secondary-title-color);
 }
 
+.prices .price-list {
+  display: flex;
+  gap: 30px;
+  border-bottom: 44px;
+}
+
+.prices .price-part {
+  flex-basis: calc((100% - 30px) / 2);
+  padding: 30px 20px;
+}
+
+.prices .price-row {
+  display: flex;
+}
+
+.price-row > p:last-child {
+  margin-left: auto;
+}
+
 .prices .booking-btn {
+  display: block;
+  margin: 0 auto;
+
   color: var(--secondary-title-color);
   background-color: inherit;
 }
@@ -152,6 +311,34 @@ body {
 }
 
 /* why-us section */
+.why-us .container {
+  display: flex;
+  gap: 30px;
+
+  padding-right: 70px;
+}
+
+.why-us .stat-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+
+  padding-left: 100px;
+  padding-right: 70px;
+}
+
+.stat-wrap .list-item {
+  flex-basis: calc((100% - 30px) / 2);
+}
+
+.stat-wrap .list-item:nth-child(2) {
+  margin-top: 30px;
+}
+
+.why-us-part {
+  flex-basis: calc((100% - 30px) / 2);
+}
+
 .stat {
   font-weight: 700;
   font-size: 42px;
