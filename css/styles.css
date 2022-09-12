@@ -10,6 +10,21 @@
   --secondary-pretitle-color: rgba(157, 164, 189, 0.6);
   --booking-section-color: #191c26;
 }
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
 body {
   font-family: 'Open Sans', sans-serif;
   font-size: 18px;
@@ -42,7 +57,8 @@ ul {
 
 img {
   display: block;
-  width: 100%;
+  max-width: 100%;
+  height: auto;
 }
 
 .container {
@@ -62,14 +78,9 @@ img {
   font-family: 'Raleway', sans-serif;
   font-size: 42px;
   font-weight: 700;
-  line-height: 1.16;
+  line-height: 1.1669;
   letter-spacing: 0.05em;
   color: var(--main-title-color);
-}
-.line {
-  height: 1px;
-  width: 60px;
-  background-color: var(--main-title-color);
 }
 
 .link {
@@ -93,16 +104,23 @@ img {
   font-style: normal;
   font-weight: 600;
   font-size: 11px;
-  line-height: 1.36;
+  line-height: 1.365;
   text-transform: uppercase;
+}
+.pre-text {
+  line-height: 1.6667;
 }
 
 .booking-btn {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.334;
+
   text-transform: uppercase;
   background-color: var(--main-backbround-color);
   cursor: pointer;
 
-  padding: 12px 20px;
+  padding: 11px 19px;
 
   border: 1px solid var(--accent-text-color);
   border-radius: 25px;
@@ -110,6 +128,7 @@ img {
 
 .booking-btn:hover,
 .booking-btn:focus {
+  color: var(--secondary-title-color);
   background-color: var(--accent-text-color);
 }
 
@@ -248,9 +267,9 @@ header.section {
   flex-shrink: 0;
 }
 
-/* .photo-list > li {
-  flex-shrink: 0;
-} */
+.about-wrap {
+  padding-right: 100px;
+}
 
 .about .pre-text {
   margin-bottom: 20px;
@@ -259,7 +278,7 @@ header.section {
   margin-bottom: 42px;
 
   font-size: 14px;
-  line-height: 1.86;
+  line-height: 1.858;
 }
 
 /* prices section */
@@ -328,11 +347,25 @@ header.section {
 }
 
 .stat-wrap .list-item {
-  flex-basis: calc((100% - 30px) / 2);
+  padding: 20px 24px;
+  flex-grow: 0;
+  flex-shrink: 0;
+  height: 133px;
+  text-align: center;
+  background-color: var(--secondary-background-color);
+}
+
+.stat-wrap .list-item {
+  flex-basis: 170px;
+  /* calc((100% - 30px) / 2); */
 }
 
 .stat-wrap .list-item:nth-child(2) {
   margin-top: 30px;
+}
+
+.stat-wrap .list-item:nth-child(3) {
+  margin-top: -30px;
 }
 
 .why-us-part {
@@ -359,11 +392,19 @@ header.section {
   line-height: 1.36;
 }
 
-.why-us .list-item {
-  background-color: var(--secondary-background-color);
-}
+
 
 /* Barbers section */
+.barbers-list {
+  display: flex;
+  gap: 30px;
+}
+
+.barbers-item {
+  flex-basis: calc((100% - 60px) / 3);
+  text-align: center;
+}
+
 .barber-title {
   line-height: 1.38;
   color: var(--main-title-color);
@@ -374,6 +415,54 @@ header.section {
   color: var(--accent-text-color);
 }
 
+.barber-img {
+  margin-bottom: 30px;
+}
+
+.barber-title {
+  margin-bottom: 8px;
+}
+
+.barber-style {
+  margin-bottom: 30px;
+}
+
+.barber-social {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+/* Portfolio section */
+
+.portfolio .pre-title {
+  margin-bottom: 44px;
+}
+
+.portfolio-wrap {
+  display: flex;
+  gap: 30px;
+}
+
+.portfolio-item {
+  flex-basis: calc((100% - 90px) / 4);
+}
+
+/* pre-footer */
+
+.pre-footer {
+  background-color: var(--temp-background-color);
+}
+
+.pre-footer-wrap {
+  display: flex;
+  gap: 30px;
+}
+
+.pre-footer-item {
+  flex-basis : calc((100% - 30px) / 2);
+  }
+}
 /* Online booking section */
 .online-booking {
   background-color: var(--booking-section-color);
@@ -389,11 +478,21 @@ header.section {
   color: var(--hero-text-color);
 }
 .contacts .title {
+  margin-bottom: 40px;
+
   color: var(--secondary-title-color);
 }
 
 .contacts .pre-title {
   color: var(--secondary-title-color);
+}
+
+.contacts .item:not(:last-child){
+  margin-bottom: 20px;
+}
+
+.contacts .item:last-child{
+  margin-bottom: 40px;
 }
 
 .contacts .link {
