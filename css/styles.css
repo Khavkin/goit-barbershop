@@ -381,6 +381,8 @@ header.section {
 }
 
 .plus {
+vertical-align: super;
+
   font-size: 16px;
   font-weight: 600;
   color: var(--accent-text-color);
