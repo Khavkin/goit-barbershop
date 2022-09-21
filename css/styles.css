@@ -525,7 +525,8 @@ header.section {
   gap: 30px;
 
   background-color: var(--temp-background-color);
-  max-width: 1600px;
+  width: 1600px;
+  width: 1600px;
   margin: 0 auto;
 }
 
@@ -592,6 +593,10 @@ header.section {
   background-color: var(--hero-text-color);
 }
 
+.contacts .list {
+  width: 230px;
+}
+
 .contacts .item:not(:last-child) {
   margin-bottom: 20px;
 }
@@ -618,6 +623,11 @@ header.section {
 .contacts .contacts-icon {
   fill: currentColor;
   margin-right: 16px;
+}
+
+.location .contacts-icon {
+  position: relative;
+  top: -14px;
 }
 
 /* footer */
