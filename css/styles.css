@@ -424,13 +424,9 @@ header.section {
   color: var(--main-title-color);
 
   position: relative;
-
-  outline: 1px solid red;
 }
 
 .plus {
-  /* vertical-align: super; */
-
   position: absolute;
   top: 7px;
 
