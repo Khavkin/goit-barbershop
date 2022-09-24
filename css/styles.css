@@ -145,6 +145,11 @@ img {
 }
 
 /* header */
+header {
+  position: absolute;
+  width: 100%;
+}
+
 header.section {
   padding-top: 20px;
   padding-bottom: 0;
@@ -152,12 +157,14 @@ header.section {
 
 .header-wrap {
   display: flex;
+  align-items: center;
+  margin-top: 40px;
 }
 
 /* Logo */
 .logo {
-  padding-top: 32px;
   padding-right: 32px;
+  z-index: 99;
 }
 
 /* nav */
@@ -175,7 +182,6 @@ header.section {
   letter-spacing: 0.1em;
 
   color: var(--secondary-title-color);
-  background-color: var(--temp-background-color);
 }
 
 .nav-list {
@@ -241,7 +247,7 @@ header.section {
 
   padding-left: 51px;
   padding-right: 20px;
-  padding-top: 140px;
+  padding-top: 40px;
   transform: rotate(180deg);
   writing-mode: vertical-lr;
 
