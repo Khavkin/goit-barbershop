@@ -9,6 +9,14 @@
   --temp-background-color: #191c26;
   --secondary-pretitle-color: rgba(157, 164, 189, 0.6);
   --booking-section-color: #191c26;
+  --transition-barbers: 1000ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-global: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .visually-hidden {
@@ -86,6 +94,7 @@ img {
 .link {
   text-decoration: none;
   font-style: normal;
+  transition: color var(--transition-global);
 }
 
 .link:hover,
@@ -136,6 +145,8 @@ img {
 
   border: 1px solid var(--accent-text-color);
   border-radius: 25px;
+
+  transition: color var(--transition-global), background-color var(--transition-global);
 }
 
 .booking-btn:hover,
@@ -463,6 +474,48 @@ header.section {
   text-align: center;
 }
 
+.barber-wrap {
+  width: 100%;
+
+  position: relative;
+  perspective: 400px;
+}
+
+.barber-img,
+.barber-back {
+  backface-visibility: hidden;
+
+  transition: transform var(--transition-barbers);
+}
+
+.barber-back {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+
+  display: flex;
+  align-items: center;
+
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.5;
+  background-color: var(--booking-section-color);
+  color: var(--secondary-title-color);
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotateY(180deg);
+}
+
+.barbers-item:hover .barber-img {
+  transform: rotateY(180deg);
+}
+
+.barbers-item:hover .barber-back {
+  transform: rotateY(360deg);
+}
+
 .barber-title {
   line-height: 1.38;
   color: var(--main-title-color);
@@ -583,6 +636,148 @@ header.section {
   color: var(--secondary-title-color);
 }
 
+.online-booking .form {
+  width: 100%;
+  color: var(--hero-text-color);
+}
+
+.online-booking .wrapper {
+  display: flex;
+  gap: 30px;
+}
+
+.online-booking .input {
+  display: inline-block;
+  width: 100%;
+}
+
+.wrapper .form-field {
+  flex-basis: calc((100% - 30px) / 2);
+}
+
+.form-field {
+  position: relative;
+  height: 44px;
+
+  margin-bottom: 30px;
+}
+
+/* не дает при автозамене заменить цвет и заливку */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition: background-color 5000s ease-in-out 0s, color 5000s ease-in-out 0s;
+}
+
+.form-field .input {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  padding: 5px 0;
+
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 1.36;
+  letter-spacing: 0.1em;
+  color: var(--hero-text-color);
+  background-color: var(--booking-section-color);
+
+  border: none;
+  outline: none;
+  border-bottom: 1px solid rgba(157, 164, 189, 0.4);
+}
+
+.form-field .input:focus {
+  border-bottom: 1px solid var(--secondary-title-color);
+  color: var(--secondary-title-color);
+}
+
+.form-field .input:focus + .label,
+.form-field .input:not(:placeholder-shown) + .label {
+  transform: translatey(-24px);
+}
+
+.form-field .label {
+  position: absolute;
+  left: 0;
+  bottom: 5px;
+
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 1.36;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+
+  transition: transform var(--transition-global);
+}
+
+.form-field.textarea {
+  height: 96px;
+  margin-bottom: 44px;
+}
+
+.form-field .textarea {
+  width: 100%;
+  height: 78px;
+
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  resize: none;
+
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 1.36;
+  letter-spacing: 0.1em;
+  color: var(--hero-text-color);
+  background-color: var(--booking-section-color);
+
+  border: none;
+  outline: none;
+  border-bottom: 1px solid rgba(157, 164, 189, 0.4);
+}
+
+.form-field.textarea > .label {
+  top: 0;
+  transform: translateY(16px);
+}
+
+.form-field.textarea .textarea:focus {
+  border-bottom: 1px solid var(--secondary-title-color);
+  color: var(--secondary-title-color);
+}
+
+.form-field.textarea .textarea:focus + .label,
+.form-field.textarea .textarea:not(:placeholder-shown) + .label {
+  transform: translatey(0);
+}
+
+.send {
+  display: inline-block;
+  width: 160px;
+  height: 40px;
+
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.33;
+  text-align: center;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+
+  border: 1px solid var(--accent-text-color);
+  border-radius: 25px;
+
+  background-color: transparent;
+  color: var(--secondary-title-color);
+  cursor: pointer;
+  transition: background-color var(--transition-global);
+}
+
+.send:hover {
+  background-color: var(--accent-text-color);
+}
+
 /* Contacts section  */
 .contacts {
   color: var(--hero-text-color);
@@ -641,7 +836,7 @@ header.section {
 
 /* footer */
 .footer {
-  padding: 56px 215px;
+  padding: 56px 0;
 }
 
 footer {
@@ -678,4 +873,55 @@ footer .item:first-child::before {
 footer .link {
   font: inherit;
   color: var(--main-title-color);
+}
+
+/* backdrop */
+
+.backdrop {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: rgba(25, 28, 38, 0.2);
+}
+
+.form-wrap {
+  width: 500px;
+  height: 500px;
+
+  position: relative;
+
+  background-color: var(--main-backbround-color);
+}
+
+.btn-close {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  border: 1px solid gray;
+  background-color: inherit;
+  cursor: pointer;
+}
+
+.icon-close {
+  fill: currentColor;
+}
+
+.btn-close:hover .icon-close,
+.btn-close:focus .icon-close {
+  fill: var(--accent-text-color);
 }

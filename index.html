@@ -32,7 +32,7 @@
           </ul>
           <div class="contacts-wrap">
             <a class="link nav-link" href="tel:+380441111111">+38 044 111 11 11</a>
-            <button class="booking-btn" type="button">online-booking</button>
+            <button class="booking-btn" type="button" data-modal-open>online-booking</button>
           </div>
         </nav>
       </div>
@@ -84,7 +84,7 @@
               are a team that is always "on the same wave" with clients. Therefore, we are always
               ready to improve everyone who comes to us!
             </p>
-            <button class="booking-btn" type="button">online-booking</button>
+            <button class="booking-btn" type="button" data-modal-open>online-booking</button>
           </div>
         </div>
       </section>
@@ -136,7 +136,7 @@
               </ul>
             </li>
           </ul>
-          <button class="booking-btn" type="button">online-booking</button>
+          <button class="booking-btn" type="button" data-modal-open>online-booking</button>
         </div>
       </section>
 
@@ -182,7 +182,17 @@
           <h2 class="title">Our barbers</h2>
           <ul class="list barbers-list">
             <li class="barbers-item">
-              <img class="barber-img" src="./img/barbers-img-1.jpg" alt="John Smith" width="370" />
+              <div class="barber-wrap">
+                <img
+                  class="barber-img"
+                  src="./img/barbers-img-1.jpg"
+                  alt="John Smith"
+                  width="370"
+                />
+                <p class="barber-back">
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Soluta, quidem.
+                </p>
+              </div>
               <h3 class="barber-title">John Smith</h3>
               <p class="barber-style">Extreme Barber</p>
               <ul class="list barber-social">
@@ -217,7 +227,17 @@
               </ul>
             </li>
             <li class="barbers-item">
-              <img class="barber-img" src="./img/barbers-img-2.jpg" alt="Michele Doe" width="370" />
+              <div class="barber-wrap">
+                <img
+                  class="barber-img"
+                  src="./img/barbers-img-2.jpg"
+                  alt="Michele Doe"
+                  width="370"
+                />
+                <p class="barber-back">
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Soluta, quidem.
+                </p>
+              </div>
               <h3 class="barber-title">Michele Doe</h3>
               <p class="barber-style">Extreme Barber</p>
               <ul class="list barber-social">
@@ -252,7 +272,17 @@
               </ul>
             </li>
             <li class="barbers-item">
-              <img class="barber-img" src="./img/barbers-img-3.jpg" alt="Alan Black" width="370" />
+              <div class="barber-wrap">
+                <img
+                  class="barber-img"
+                  src="./img/barbers-img-3.jpg"
+                  alt="Alan Black"
+                  width="370"
+                />
+                <p class="barber-back">
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Soluta, quidem.
+                </p>
+              </div>
               <h3 class="barber-title">Alan Black</h3>
               <p class="barber-style">Extreme Barber</p>
               <ul class="list barber-social">
@@ -317,6 +347,31 @@
           <!-- online-booking section-->
           <section class="online-booking pre-footer-item">
             <h2 class="title">Online-booking</h2>
+            <form class="form">
+              <div class="wrapper">
+                <div class="form-field">
+                  <input class="input" type="text" name="name" id="name" placeholder=" " required />
+                  <label class="label" for="name">name*</label>
+                </div>
+                <div class="form-field">
+                  <input
+                    class="input"
+                    type="tel"
+                    name="phone"
+                    id="phone"
+                    placeholder=" "
+                    required
+                  />
+                  <label class="label" for="phone">Phone*</label>
+                </div>
+              </div>
+              <div class="form-field textarea">
+                <textarea class="textarea" name="message" id="message" placeholder=" "></textarea>
+                <label class="label" for="message">Message</label>
+              </div>
+              <button class="send" type="submit">send</button>
+            </form>
+
             <!-- booking form-->
           </section>
         </div>
@@ -372,5 +427,16 @@
         <li class="item"><a class="link" href="" rel="noopener noreferrer nofollow">Youtube</a></li>
       </ul>
     </footer>
+
+    <div class="backdrop is-hidden" data-modal>
+      <div class="form-wrap">
+        <button class="btn-close" type="button" data-modal-close>
+          <svg class="icon-close" width="24" height="24">
+            <use href="./img/icons.svg#icon-close"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <script src="./js/modal.js"></script>
   </body>
 </html>
