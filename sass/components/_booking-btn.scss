@@ -1,0 +1,25 @@
+.booking-btn {
+  width: 160px;
+  height: 40px;
+
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.334;
+
+  text-transform: uppercase;
+  background-color: $main-backbround-color;
+  cursor: pointer;
+
+  //padding: 11px 19px;
+
+  border: 1px solid $accent-text-color;
+  border-radius: 25px;
+
+  transition: color $transition-global, background-color $transition-global;
+}
+
+.booking-btn:hover,
+.booking-btn:focus {
+  color: $secondary-title-color;
+  background-color: $accent-text-color;
+}

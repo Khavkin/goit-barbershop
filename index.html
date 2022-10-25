@@ -14,27 +14,27 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
     />
-    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/main.min.css" />
     <title>Barbershop</title>
   </head>
   <body>
-    <header class=".section">
+    <header class="header .section header__section">
       <div class="container header-wrap">
         <a class="logo link" href="./index.html"
           ><img src="./img/logo.svg" alt="Barbershop logo"
         /></a>
         <nav class="nav">
-          <ul class="list nav-list">
-            <li><a class="link nav-link current" href="">About</a></li>
-            <li><a class="link nav-link" href="">Services and prices</a></li>
-            <li><a class="link nav-link" href="">Barbers</a></li>
-            <li><a class="link nav-link" href="">Contacts</a></li>
+          <ul class="list nav__list">
+            <li><a class="link nav__link current" href="">About</a></li>
+            <li><a class="link nav__link" href="">Services and prices</a></li>
+            <li><a class="link nav__link" href="">Barbers</a></li>
+            <li><a class="link nav__link" href="">Contacts</a></li>
           </ul>
-          <div class="contacts-wrap">
-            <a class="link nav-link" href="tel:+380441111111">+38 044 111 11 11</a>
-            <button class="booking-btn" type="button" data-modal-open>online-booking</button>
-          </div>
         </nav>
+        <div class="contacts-wrap">
+          <a class="link nav-link" href="tel:+380441111111">+38 044 111 11 11</a>
+          <button class="booking-btn" type="button" data-modal-open>online-booking</button>
+        </div>
       </div>
     </header>
     <main>
@@ -55,7 +55,7 @@
           </ul>
 
           <div class="hero-wrap">
-            <p class="pre-title">A hair salon for men in Kyiv</p>
+            <p class="pre-title pre-title__with-title">A hair salon for men in Kyiv</p>
             <h1 class="title">BarberShop</h1>
             <p>
               We are experts in trendy men’s haircuts. <br />
@@ -66,19 +66,46 @@
       </section>
 
       <!-- About section-->
-      <section class="about section">
-        <div class="container">
-          <ul class="photo-list">
-            <li><img src="./img/about-img-1.jpg" alt="man with beard" width="270" /></li>
-            <li><img src="./img/about-img-2.jpg" alt="shaving a beard" width="270" /></li>
+      <section class="about section about__section">
+        <div class="container about__container">
+          <ul class="about__photo-list about__block">
+            <li class="about__list-item">
+              <picture>
+                <source
+                  srcset="./img/about/img-1-270.jpg 1x, ./img/about/img-1-540.jpg 2x"
+                  media="(min-width: 1200px)"
+                />
+                <source
+                  srcset="./img/about/img-1-330.jpg 1x, ./img/about/img-1-660.jpg 2x"
+                  media="(min-width: 768px)"
+                />
+                <img src="./img/about/img-1-270.jpg" alt="man with beard" />
+              </picture>
+            </li>
+            <li class="about__list-item">
+              <picture>
+                <source
+                  srcset="./img/about/img-2-270.jpg 1x, ./img/about/img-2-540.jpg 2x"
+                  media="(min-width: 1200px)"
+                />
+                <source
+                  srcset="./img/about/img-2-330.jpg 1x, ./img/about/img-2-660.jpg 2x"
+                  media="(min-width: 768px)"
+                />
+                <img src="./img/about/img-2-270.jpg" alt="man with beard" />
+              </picture>
+            </li>
           </ul>
-          <div class="about-wrap">
-            <p class="pre-title">About</p>
-            <h2 class="title">Best Barbershop in your city</h2>
-            <p class="pre-text">
+          <div class="about__wrap about__block">
+            <p class="pre-title pre-title__with-title">About</p>
+            <h2 class="title about__title">Best Barbershop in your city</h2>
+            <p class="pre-text about__pre-text about__pre-text--mobile">
+              If you want to add more confidence to your image, you should visit us.
+            </p>
+            <p class="pre-text about__pre-text about__pre-text--desktop">
               If you want to add more confidence to your image, you should definitely visit us.
             </p>
-            <p class="about-text">
+            <p class="about__text">
               We are a team that never stops at what has been achieved and are thirsty for changes.
               And when you fall into the hands of our master, you will never be the same again. We
               are a team that is always "on the same wave" with clients. Therefore, we are always
@@ -92,7 +119,7 @@
       <!--Services and prices section-->
       <section class="prices section">
         <div class="container">
-          <p class="pre-title">Spend your time with the best masters</p>
+          <p class="pre-title pre-title__with-title">Spend your time with the best masters</p>
           <h2 class="title">Services and prices</h2>
           <ul class="list price-list">
             <li class="price-part">
@@ -165,7 +192,7 @@
             </li>
           </ul>
           <div class="why-us-wrap why-us-part">
-            <p class="pre-title">Old traditional school</p>
+            <p class="pre-title pre-title__with-title">Old traditional school</p>
             <h2 class="title">¿Why people come to us?</h2>
             <p>
               Only good things are said about us. But it's better to see and feel 1 time than read
@@ -177,139 +204,229 @@
 
       <!-- Barbers section-->
       <section class="barbers section">
-        <div class="container">
-          <p class="pre-title">For true enjoyers of the atmosphere</p>
-          <h2 class="title">Our barbers</h2>
-          <ul class="list barbers-list">
-            <li class="barbers-item">
-              <div class="barber-wrap">
-                <img
-                  class="barber-img"
-                  src="./img/barbers-img-1.jpg"
-                  alt="John Smith"
-                  width="370"
-                />
-                <p class="barber-back">
+        <div class="container barbers__container">
+          <p class="pre-title pre-title__with-title">For true enjoyers of the atmosphere</p>
+          <h2 class="title barbers__title">Our barbers</h2>
+          <ul class="list barbers__list">
+            <li class="barbers__item">
+              <div class="barbers__wrap">
+                <picture class="barbers__picture">
+                  <source
+                    srcset="./img/barbers/img-1-370.jpg 1x, ./img/about/img-1-740.jpg 2x"
+                    media="(min-width: 1200px)"
+                  />
+                  <source
+                    srcset="./img/barbers/img-1-450.jpg 1x, ./img/barbers/img-1-900.jpg 2x"
+                    media="(min-width: 768px)"
+                  />
+                  <source
+                    srcset="./img/barbers/img-1-418.jpg 1x, ./img/barbers/img-1-836.jpg 2x"
+                    media="(min-width: 480px)"
+                  />
+                  <img src="./img/barbers/img-1-418.jpg" alt="John Smith" />
+                </picture>
+
+                <p class="barbers__back">
                   Lorem ipsum dolor, sit amet consectetur adipisicing elit. Soluta, quidem.
                 </p>
               </div>
-              <h3 class="barber-title">John Smith</h3>
-              <p class="barber-style">Extreme Barber</p>
-              <ul class="list barber-social">
+              <h3 class="barbers__item-title">John Smith</h3>
+              <p class="barbers__style">Extreme Barber</p>
+              <ul class="list social-list">
                 <li>
-                  <a class="link" href="" rel="noopener noreferrer nofollow" aria-label="Instagram">
-                    <svg class="social-img" width="20" height="20">
+                  <a
+                    class="link social-list__link"
+                    href=""
+                    rel="noopener noreferrer nofollow"
+                    aria-label="Instagram"
+                  >
+                    <svg class="social-list__img" width="20" height="20">
                       <use href="./img/icons.svg#icon-instagram"></use>
                     </svg>
                   </a>
                 </li>
                 <li>
-                  <a class="link" href="" rel="noopener noreferrer nofollow" aria-label="Instagram">
-                    <svg class="social-img" width="20" height="20">
+                  <a
+                    class="link social-list__link"
+                    href=""
+                    rel="noopener noreferrer nofollow"
+                    aria-label="Instagram"
+                  >
+                    <svg class="social-list__img" width="20" height="20">
                       <use href="./img/icons.svg#icon-twitter"></use>
                     </svg>
                   </a>
                 </li>
                 <li>
-                  <a class="link" href="" rel="noopener noreferrer nofollow" aria-label="facebook">
-                    <svg class="social-img" width="20" height="20">
+                  <a
+                    class="link social-list__link"
+                    href=""
+                    rel="noopener noreferrer nofollow"
+                    aria-label="facebook"
+                  >
+                    <svg class="social-list__img" width="20" height="20">
                       <use href="./img/icons.svg#icon-facebook"></use>
                     </svg>
                   </a>
                 </li>
                 <li>
-                  <a class="link" href="" rel="noopener noreferrer nofollow" aria-label="linkedin">
-                    <svg class="social-img" width="20" height="20">
+                  <a
+                    class="link social-list__link"
+                    href=""
+                    rel="noopener noreferrer nofollow"
+                    aria-label="linkedin"
+                  >
+                    <svg class="social-list__img" width="20" height="20">
                       <use href="./img/icons.svg#icon-linkedin"></use>
                     </svg>
                   </a>
                 </li>
               </ul>
             </li>
-            <li class="barbers-item">
-              <div class="barber-wrap">
-                <img
-                  class="barber-img"
-                  src="./img/barbers-img-2.jpg"
-                  alt="Michele Doe"
-                  width="370"
-                />
-                <p class="barber-back">
+            <li class="barbers__item">
+              <div class="barbers__wrap">
+                <picture class="barbers__picture">
+                  <source
+                    srcset="./img/barbers/img-2-370.jpg 1x, ./img/about/img-2-740.jpg 2x"
+                    media="(min-width: 1200px)"
+                  />
+                  <source
+                    srcset="./img/barbers/img-2-450.jpg 1x, ./img/barbers/img-2-900.jpg 2x"
+                    media="(min-width: 768px)"
+                  />
+                  <source
+                    srcset="./img/barbers/img-2-418.jpg 1x, ./img/barbers/img-2-836.jpg 2x"
+                    media="(min-width: 480px)"
+                  />
+                  <img src="./img/barbers/img-2-418.jpg" alt="Michele Doe" />
+                </picture>
+
+                <p class="barbers__back">
                   Lorem ipsum dolor, sit amet consectetur adipisicing elit. Soluta, quidem.
                 </p>
               </div>
-              <h3 class="barber-title">Michele Doe</h3>
-              <p class="barber-style">Extreme Barber</p>
-              <ul class="list barber-social">
+              <h3 class="barbers__item-title">Michele Doe</h3>
+              <p class="barbers__style">Extreme Barber</p>
+              <ul class="list social-list">
                 <li>
-                  <a class="link" href="" rel="noopener noreferrer nofollow" aria-label="Instagram">
-                    <svg class="social-img" width="20" height="20">
+                  <a
+                    class="link social-list__link"
+                    href=""
+                    rel="noopener noreferrer nofollow"
+                    aria-label="Instagram"
+                  >
+                    <svg class="social-list__img" width="20" height="20">
                       <use href="./img/icons.svg#icon-instagram"></use>
                     </svg>
                   </a>
                 </li>
                 <li>
-                  <a class="link" href="" rel="noopener noreferrer nofollow" aria-label="Instagram">
-                    <svg class="social-img" width="20" height="20">
+                  <a
+                    class="link social-list__link"
+                    href=""
+                    rel="noopener noreferrer nofollow"
+                    aria-label="Instagram"
+                  >
+                    <svg class="social-list__img" width="20" height="20">
                       <use href="./img/icons.svg#icon-twitter"></use>
                     </svg>
                   </a>
                 </li>
                 <li>
-                  <a class="link" href="" rel="noopener noreferrer nofollow" aria-label="facebook">
-                    <svg class="social-img" width="20" height="20">
+                  <a
+                    class="link social-list__link"
+                    href=""
+                    rel="noopener noreferrer nofollow"
+                    aria-label="facebook"
+                  >
+                    <svg class="social-list__img" width="20" height="20">
                       <use href="./img/icons.svg#icon-facebook"></use>
                     </svg>
                   </a>
                 </li>
                 <li>
-                  <a class="link" href="" rel="noopener noreferrer nofollow" aria-label="linkedin">
-                    <svg class="social-img" width="20" height="20">
+                  <a
+                    class="link social-list__link"
+                    href=""
+                    rel="noopener noreferrer nofollow"
+                    aria-label="linkedin"
+                  >
+                    <svg class="social-list__img" width="20" height="20">
                       <use href="./img/icons.svg#icon-linkedin"></use>
                     </svg>
                   </a>
                 </li>
               </ul>
             </li>
-            <li class="barbers-item">
-              <div class="barber-wrap">
-                <img
-                  class="barber-img"
-                  src="./img/barbers-img-3.jpg"
-                  alt="Alan Black"
-                  width="370"
-                />
-                <p class="barber-back">
+            <li class="barbers__item">
+              <div class="barbers__wrap">
+                <picture class="barbers__picture">
+                  <source
+                    srcset="./img/barbers/img-3-370.jpg 1x, ./img/about/img-3-740.jpg 2x"
+                    media="(min-width: 1200px)"
+                  />
+                  <source
+                    srcset="./img/barbers/img-3-450.jpg 1x, ./img/barbers/img-3-900.jpg 2x"
+                    media="(min-width: 768px)"
+                  />
+                  <source
+                    srcset="./img/barbers/img-3-418.jpg 1x, ./img/barbers/img-3-836.jpg 2x"
+                    media="(min-width: 480px)"
+                  />
+                  <img src="./img/barbers/img-3-418.jpg" alt="Alan Black" />
+                </picture>
+
+                <p class="barbers__back">
                   Lorem ipsum dolor, sit amet consectetur adipisicing elit. Soluta, quidem.
                 </p>
               </div>
-              <h3 class="barber-title">Alan Black</h3>
-              <p class="barber-style">Extreme Barber</p>
-              <ul class="list barber-social">
+              <h3 class="barbers__item-title">Alan Black</h3>
+              <p class="barbers__style">Extreme Barber</p>
+              <ul class="list social-list">
                 <li>
-                  <a class="link" href="" rel="noopener noreferrer nofollow" aria-label="Instagram">
-                    <svg class="social-img" width="20" height="20">
+                  <a
+                    class="link social-list__link"
+                    href=""
+                    rel="noopener noreferrer nofollow"
+                    aria-label="Instagram"
+                  >
+                    <svg class="social-list__img" width="20" height="20">
                       <use href="./img/icons.svg#icon-instagram"></use>
                     </svg>
                   </a>
                 </li>
                 <li>
-                  <a class="link" href="" rel="noopener noreferrer nofollow" aria-label="Instagram">
-                    <svg class="social-img" width="20" height="20">
+                  <a
+                    class="link social-list__link"
+                    href=""
+                    rel="noopener noreferrer nofollow"
+                    aria-label="Instagram"
+                  >
+                    <svg class="social-list__img" width="20" height="20">
                       <use href="./img/icons.svg#icon-twitter"></use>
                     </svg>
                   </a>
                 </li>
                 <li>
-                  <a class="link" href="" rel="noopener noreferrer nofollow" aria-label="facebook">
-                    <svg class="social-img" width="20" height="20">
+                  <a
+                    class="link social-list__link"
+                    href=""
+                    rel="noopener noreferrer nofollow"
+                    aria-label="facebook"
+                  >
+                    <svg class="social-list__img" width="20" height="20">
                       <use href="./img/icons.svg#icon-facebook"></use>
                     </svg>
                   </a>
                 </li>
                 <li>
-                  <a class="link" href="" rel="noopener noreferrer nofollow" aria-label="linkedin">
-                    <svg class="social-img" width="20" height="20">
+                  <a
+                    class="link social-list__link"
+                    href=""
+                    rel="noopener noreferrer nofollow"
+                    aria-label="linkedin"
+                  >
+                    <svg class="social-list__img" width="20" height="20">
                       <use href="./img/icons.svg#icon-linkedin"></use>
                     </svg>
                   </a>
@@ -324,18 +441,78 @@
         <div class="container">
           <p class="pre-title">In Latin, "barba" means "beard"</p>
           <h2 class="visually-hidden">Portfolio</h2>
-          <ul class="list portfolio-wrap">
-            <li class="portfolio-item">
-              <img src="./img/portfolio-img-1.jpg" alt="Portfolio 1" width="270" />
+          <ul class="list portfolio__wrap">
+            <li class="portfolio__item">
+              <picture>
+                <source
+                  srcset="./img/portfolio/img-1-270.jpg 1x, ./img/about/img-1-540.jpg 2x"
+                  media="(min-width: 1200px)"
+                />
+                <source
+                  srcset="./img/portfolio/img-1-330.jpg 1x, ./img/portfolio/img-1-660.jpg 2x"
+                  media="(min-width: 768px)"
+                />
+                <source
+                  srcset="./img/portfolio/img-1-418.jpg 1x, ./img/portfolio/img-1-936.jpg 2x"
+                  media="(min-width: 480px)"
+                />
+
+                <img src="./img/portfolio/img-1-418.jpg" alt="Portfolio 1" />
+              </picture>
             </li>
-            <li class="portfolio-item">
-              <img src="./img/portfolio-img-2.jpg" alt="Portfolio 2" width="270" />
+            <li class="portfolio__item">
+              <picture>
+                <source
+                  srcset="./img/portfolio/img-2-270.jpg 1x, ./img/about/img-2-540.jpg 2x"
+                  media="(min-width: 1200px)"
+                />
+                <source
+                  srcset="./img/portfolio/img-2-330.jpg 1x, ./img/portfolio/img-2-660.jpg 2x"
+                  media="(min-width: 768px)"
+                />
+                <source
+                  srcset="./img/portfolio/img-2-418.jpg 1x, ./img/portfolio/img-2-936.jpg 2x"
+                  media="(min-width: 480px)"
+                />
+
+                <img src="./img/portfolio/img-2-418.jpg" alt="Portfolio 1" />
+              </picture>
             </li>
-            <li class="portfolio-item">
-              <img src="./img/portfolio-img-3.jpg" alt="Portfolio 3" width="270" />
+            <li class="portfolio__item">
+              <picture>
+                <source
+                  srcset="./img/portfolio/img-3-270.jpg 1x, ./img/about/img-3-540.jpg 2x"
+                  media="(min-width: 1200px)"
+                />
+                <source
+                  srcset="./img/portfolio/img-3-330.jpg 1x, ./img/portfolio/img-3-660.jpg 2x"
+                  media="(min-width: 768px)"
+                />
+                <source
+                  srcset="./img/portfolio/img-3-418.jpg 1x, ./img/portfolio/img-3-936.jpg 2x"
+                  media="(min-width: 480px)"
+                />
+
+                <img src="./img/portfolio/img-3-418.jpg" alt="Portfolio 3" />
+              </picture>
             </li>
-            <li class="portfolio-item">
-              <img src="./img/portfolio-img-4.jpg" alt="Portfolio 4" width="270" />
+            <li class="portfolio__item">
+              <picture>
+                <source
+                  srcset="./img/portfolio/img-4-270.jpg 1x, ./img/about/img-4-540.jpg 2x"
+                  media="(min-width: 1200px)"
+                />
+                <source
+                  srcset="./img/portfolio/img-4-330.jpg 1x, ./img/portfolio/img-4-660.jpg 2x"
+                  media="(min-width: 768px)"
+                />
+                <source
+                  srcset="./img/portfolio/img-4-418.jpg 1x, ./img/portfolio/img-4-936.jpg 2x"
+                  media="(min-width: 480px)"
+                />
+
+                <img src="./img/portfolio/img-4-418.jpg" alt="Portfolio 4" />
+              </picture>
             </li>
           </ul>
         </div>
@@ -412,7 +589,7 @@
                 </li>
               </ul>
             </address>
-            <p class="pre-title">Working hours</p>
+            <p class="pre-title pre-title__with-title">Working hours</p>
             <p>Every day from 9:00 to 22:00</p>
           </section>
         </div>
