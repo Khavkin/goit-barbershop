@@ -1,0 +1,104 @@
+.prices {
+  max-width: 1600px;
+  margin: 0 auto;
+  color: $hero-text-color;
+  background-color: $temp-background-color;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  background-image: url('../img/prices/img-mob.png'), linear-gradient(#111319, #111319);
+
+  @include retina {
+    background-image: url('../img/prices/img-mob@2x.png'), linear-gradient(#111319, #111319);
+  }
+
+  @media screen and (min-width: ($mobile + 1)) {
+    background-image: url('../img/prices/img-tablet.png'), linear-gradient(#111319, #111319);
+
+    @include retina {
+      background-image: url('../img/prices/img-tablet@2x.png'), linear-gradient(#111319, #111319);
+    }
+  }
+  @media screen and (min-width: ($tablet + 1)) {
+    background-image: url('../img/prices/img-desk.png'), linear-gradient(#111319, #111319);
+
+    @include retina {
+      background-image: url('../img/prices/img-desk@2x.png'), linear-gradient(#111319, #111319);
+    }
+  }
+
+  &__title {
+    margin-bottom: 44px;
+
+    color: $secondary-title-color;
+  }
+
+  &__list {
+    @include desktop {
+      display: flex;
+      gap: 30px;
+    }
+
+    @media screen and (max-width: ($desktop - 1px)) {
+      background: linear-gradient(180deg, #171a24 0%, rgba(23, 26, 36, 0.2) 100%);
+    }
+
+    font-size: 14px;
+    line-height: 1.42;
+
+    @include tablet {
+      font-size: 18px;
+      line-height: 1.66;
+    }
+
+    margin-bottom: 44px;
+  }
+
+  @include desktop {
+    &__part:first-child {
+      background: linear-gradient(180deg, #171a24 0%, rgba(23, 26, 36, 0.2) 100%);
+    }
+
+    &__part:last-child {
+      background: linear-gradient(180deg, #090b13 0%, rgba(9, 11, 19, 0.2) 100%);
+    }
+    &__part {
+      flex-basis: calc((100% - 30px) / 2);
+      padding: 30px 20px;
+    }
+  }
+
+  &__row {
+    display: flex;
+    align-items: baseline;
+    :not(:last-child) {
+      margin-bottom: 20px;
+    }
+
+    &::after {
+      content: '';
+      height: 1px;
+      background: rgba(157, 164, 189, 0.12);
+      flex-grow: 1;
+      margin: 0 12px;
+    }
+
+    > p:last-child {
+      margin-left: auto;
+      order: 1;
+    }
+  }
+
+  &__booking-btn {
+    display: block;
+    margin: 0 auto;
+
+    color: $secondary-title-color;
+    background-color: inherit;
+
+    &:hover,
+    &:focus {
+      background-color: $accent-text-color;
+    }
+  }
+}

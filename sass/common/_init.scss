@@ -116,6 +116,10 @@ picture {
   font-size: 11px;
   line-height: 1.365;
   text-transform: uppercase;
+
+  --secondary-color {
+    color: $secondary-pretitle-color;
+  }
 }
 
 .pre-title::before {

@@ -329,7 +329,7 @@ header.section {
 } */
 
 /* prices section */
-.prices {
+/* .prices {
   max-width: 1600px;
   margin: 0 auto;
   color: var(--hero-text-color);
@@ -337,9 +337,9 @@ header.section {
   background: url('../img/background-prices.png'), linear-gradient(#111319, #111319);
   background-size: cover;
   background-repeat: no-repeat;
-}
+} */
 
-.prices .pre-title {
+/* .prices .pre-title {
   color: var(--secondary-pretitle-color);
 }
 
@@ -347,9 +347,9 @@ header.section {
   margin-bottom: 44px;
 
   color: var(--secondary-title-color);
-}
+} */
 
-.prices .price-list {
+/* .prices .price-list {
   display: flex;
   gap: 30px;
   margin-bottom: 44px;
@@ -361,14 +361,14 @@ header.section {
 
 .prices .price-part:last-child {
   background: linear-gradient(180deg, #090b13 0%, rgba(9, 11, 19, 0.2) 100%);
-}
+} */
 
-.prices .price-part {
+/* .prices .price-part {
   flex-basis: calc((100% - 30px) / 2);
   padding: 30px 20px;
-}
+} */
 
-.prices .price-row {
+/* .prices .price-row {
   display: flex;
   align-items: baseline;
 }
@@ -379,13 +379,13 @@ header.section {
   background: rgba(157, 164, 189, 0.12);
   flex-grow: 1;
   margin: 0 12px;
-}
+} */
 
-.price-row > p:last-child {
+/* .price-row > p:last-child {
   margin-left: auto;
   order: 1;
-}
-
+} */
+/* 
 .prices .booking-btn {
   display: block;
   margin: 0 auto;
@@ -397,7 +397,7 @@ header.section {
 .prices .booking-btn:hover,
 .prices .booking-btn:focus {
   background-color: var(--accent-text-color);
-}
+} */
 
 /* why-us section */
 .why-us .container {
@@ -554,10 +554,10 @@ header.section {
   background-color: var(--main-backbround-color);
 } */
 
-.barber-social .link:hover .barber-social .social-img,
+/* .barber-social .link:hover .barber-social .social-img,
 .barber-social .link:focus .barber-social .social-img {
   fill: var(--accent-text-color);
-}
+} */
 
 /* .barber-social .social-img {
   fill: currentColor;
