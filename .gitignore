@@ -105,3 +105,4 @@ dist
 
 #temp images
 img/icons/
+*.zip
